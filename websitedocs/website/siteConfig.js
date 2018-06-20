@@ -11,8 +11,8 @@
 const siteConfig = {
   title: 'Test Site' /* title for your website */,
   tagline: 'A website for testing',
-  url: 'https://ihmcroboticsdocs.github.io/' /* your website url */,
-  baseUrl: '/sampleproject/' /* base url for your project */,
+  url: 'https://ihmcroboticsdocs.github.io/sampleproject' /* your website url */,
+  baseUrl: '/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -44,8 +44,6 @@ const siteConfig = {
     }
   ],
 
-  // If you have users set above, you add it here:
-  users,
 
    /* path to images for header/footer */
   headerIcon: 'img/running-man-logo.png',
