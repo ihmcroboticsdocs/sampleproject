@@ -11,7 +11,7 @@
 const siteConfig = {
   title: 'Test Site' /* title for your website */,
   tagline: 'A website for testing',
-  url: 'https://ihmcroboticsdocs.github.io/sampleproject' /* your website url */,
+  url: 'https://ihmcroboticsdocs.github.io' /* your website url */,
   baseUrl: '/sampleproject/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
