@@ -33,8 +33,7 @@
 var completeFile;
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
-    .then(data => completeFile = data)
-    .then(() => document.getElementById("code").innerHTML = completeFile)
+    .then(data => document.getElementById("code").innerHTML = data)
 </script>
 <!--
 <script>
