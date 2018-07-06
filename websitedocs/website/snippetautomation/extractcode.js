@@ -31,5 +31,22 @@ fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/test
 
 
 //Testing script code to insert straight into tutorials
+/*
 
+<pre><code id="code">
+
+</code>
+</pre>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+var completeFile;
+fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
+    .then(response =>response.text())
+    .then(data => completeFile = data)
+    .then(() => document.getElementById("code").innerHTML = completeFile)
+</script>
+*/
 

@@ -1,25 +1,20 @@
 ---
-id: testsidebarsecond
-title: sidebar second
-sidebar_label: second
+id: testhome
+title: Test Home
+sidebar_label: test
 ---
 
 Hello this is some markdown text.
 
-<p id="code">
-</p>
+<pre><code id="code" class="hljs css languages- java">
 
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+</code>
+</pre>
 
 <script>
-var completeFile;
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
-    .then(data => completeFile = data)
-    .then(() => document.getElementById("code").innerHTML = codeToHTML(completeFile))
+    .then(data => document.getElementById("code").innerHTML = data)
 </script>
 
 
