@@ -26,7 +26,13 @@
 <p></code></p>
 </pre>
 </figure>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
 <script>
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
