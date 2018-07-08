@@ -86,8 +86,6 @@ const siteConfig = {
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
 
-  //Stylesheet for code snippets
-  stylesheets: ['//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css']
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...

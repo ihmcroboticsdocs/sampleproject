@@ -33,20 +33,47 @@ fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/test
 //Testing script code to insert straight into tutorials
 /*
 
+
 <pre><code id="code">
 
 </code>
 </pre>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
 <script>
-var completeFile;
+hljs.initHighlightingOnLoad();</script>
+<script>
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
-    .then(data => completeFile = data)
-    .then(() => document.getElementById("code").innerHTML = completeFile)
+    .then(data => document.getElementById("code").innerHTML = data)
 </script>
+
+*/
+
+/*
+
+<!--
+<script>
+document.getElementById("code").innerHTML = "testing code";
+</script>
+
+<script src="../snippetautomation/extractcode.js"></script>
+<script type="text/javascript">
+    CODESOURCE.init(["../../src/us/ihmc/testeuclid/ValkyrieDemo.java"]);
+    CODESOURCE.testing();
+</script>
+
+<p> does raw html work? </p>
+
+<p>
+``` java
+System.out.println("Does this look like code?");
+
+```
+</p>
+
+
+This is the rest of the tutorial, attempt #3.
+
+-->
 */
 
