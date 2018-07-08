@@ -22,17 +22,11 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Test Home</h1></header><article><div><span><p>Hello this is some markdown text.</p>
-<figure class="highlight"><pre><code id="code" class="language-java" data-lang="java">
+<pre><code id="code">
 <p></code></p>
 </pre>
-</figure>
 <script>
-$(document).ready(function() {
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-</script>
+hljs.initHighlightingOnLoad();</script>
 <script>
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
