@@ -28,7 +28,7 @@ fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/test
     .then(response =>response.text())
     .then(data => codeString = data)
     .then(() => codeString = "<code>\n" + codeString + "\n</code>")
-    .then(() => document.getElementById("code").innerHTML = hljs.highlight('java', codeString)) 
+    .then(() => document.getElementById("code").innerHTML = hljs.highlight('java', codeString).value) 
 </script>
 <p>Hello this is some markdown text.</p>
 <pre id="code">
