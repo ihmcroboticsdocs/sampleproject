@@ -22,11 +22,13 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Test Home</h1></header><article><div><span><script>
+var codeString;
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
-    .then(data => document.getElementById("code").innerHTML = data);
+    .then(data => codeString = data);
+    document.getElementById("code").innerHTML = hljs.highlightAuto(codeString).value;
    // hljs.initHighlightingOnLoad();
-    hljs.highlightBlock(document.getElementById("code"));
+    //hljs.highlightBlock(document.getElementById("code"));
 </script>
 <p>Hello this is some markdown text.</p>
 <pre><code id="code">
