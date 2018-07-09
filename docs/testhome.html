@@ -25,8 +25,7 @@
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
     .then(data => document.getElementById("code").innerHTML = data);
-    //hljs.initHighlightingOnLoad();
-    hljs.initHighlighting.called = false;
+    hljs.initHighlightingOnLoad();
     hljs.initHighlighting();
 </script>
 <p>Hello this is some markdown text.</p>
