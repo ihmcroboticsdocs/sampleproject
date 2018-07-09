@@ -22,60 +22,12 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Test Home</h1></header><article><div><span><script>
-var codeString;
 hljs.initHighlightingOnLoad();
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
-    .then(data => codeString = data)
-    .then(() => document.getElementById("code").innerHTML = hljs.highlight('java', codeString).value) 
+    .then(data => document.getElementById("code").innerHTML = hljs.highlight('java', data).value) 
 </script>
-<p>Hello this is some markdown text.</p>
 <pre><code id="code">
-<p></code></p>
-</pre>
-<pre>
-<code>
-<p>package us.ihmc.demo;</p>
-<p>import us.ihmc.avatar.DRCFlatGroundWalkingTrack;
-import us.ihmc.avatar.drcRobot.DRCRobotModel;
-import us.ihmc.avatar.initialSetup.DRCGuiInitialSetup;
-import us.ihmc.avatar.initialSetup.DRCRobotInitialSetup;
-import us.ihmc.avatar.initialSetup.DRCSCSInitialSetup;
-import us.ihmc.commonWalkingControlModules.desiredHeadingAndVelocity.HeadingAndVelocityEvaluationScriptParameters;
-import us.ihmc.commonWalkingControlModules.highLevelHumanoidControl.factories.WalkingProvider;
-import us.ihmc.jMonkeyEngineToolkit.GroundProfile3D;
-import us.ihmc.simulationconstructionset.HumanoidFloatingRootJointRobot;
-import us.ihmc.simulationconstructionset.SimulationConstructionSet;
-import us.ihmc.simulationconstructionset.util.ground.FlatGroundProfile;
-import us.ihmc.valkyrie.ValkyrieRobotModel;</p>
-<p>public class ValkyrieDemo
-{
-public static void main(String[] args)
-{
-DRCRobotModel robotModel = new ValkyrieRobotModel(DRCRobotModel.RobotTarget.SCS, false); // Construct the Valkyrie robot model for simulation.
-DRCGuiInitialSetup guiInitialSetup = new DRCGuiInitialSetup(true, false); // Helper configuration object for setting up the Simulation GUI
-final double groundHeight = 0.0; // No magic numbers!
-GroundProfile3D groundProfile = new FlatGroundProfile(groundHeight); // Construct a ground profile</p>
-<pre><code class="hljs">  DRCSCSInitialSetup scsInitialSetup = new DRCSCSInitialSetup(groundProfile, robotModel.getSimulateDT()); // Helper configuration object for setting up Simulation Construction Set
-  scsInitialSetup.setDrawGroundProfile(true); // Make ground profile visible
-  scsInitialSetup.setInitializeEstimatorToActual(true); // Seed the state estimator with a perfect starting configuration
-
-  double initialYaw = 0.0; // No magic numbers!
-  DRCRobotInitialSetup&lt;HumanoidFloatingRootJointRobot&gt; robotInitialSetup = robotModel.getDefaultRobotInitialSetup(groundHeight,
-                                                                                                                  initialYaw); // Helper configuration object for the robot starting configuration
-
-  boolean useVelocityAndHeadingScript = true; // No magic... booleans?
-  boolean cheatWithGroundHeightAtForFootstep = false; // No magic... booleans?
-
-  HeadingAndVelocityEvaluationScriptParameters walkingScriptParameters = new HeadingAndVelocityEvaluationScriptParameters();
-  DRCFlatGroundWalkingTrack flatGroundWalkingTrack = new DRCFlatGroundWalkingTrack(robotInitialSetup,
-                                                                                   guiInitialSetup, scsInitialSetup, useVelocityAndHeadingScript, cheatWithGroundHeightAtForFootstep,
-                                                                                   robotModel, WalkingProvider.VELOCITY_HEADING_COMPONENT, walkingScriptParameters); // Construct a Flat Ground Walking Track, a re-usable sim environment we use to validate the basics of the walking algorithm
-
-  SimulationConstructionSet scs = flatGroundWalkingTrack.getSimulationConstructionSet(); // Construct the SCS instance
-</code></pre>
-<p>}
-}</p>
 <p></code></p>
 </pre>
 </span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/sampleproject/" class="nav-home"><img src="/sampleproject/img/running-man-logo.png" alt="Test Site" width="66" height="58"/></a><div><h5>Docs</h5><a href="https://ihmcroboticsdocs.github.io/ihmc-open-robotics-software/docs/quickstarthome.html">Quick Start</a><a href="https://ihmcroboticsdocs.github.io/docs/docshome.html">Software Documentation</a></div><div><h5>Community</h5><a href="https://github.com/ihmcrobotics">GitHub</a><a href="https://www.facebook.com/TheIHMC" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/ihmcrobotics" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://www.youtube.com/user/DRCihmcRobotics" target="_blank" rel="noreferrer noopener">YouTube</a></div></section><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>
