@@ -25,8 +25,9 @@
 var codeString;
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
-    .then(data => codeString = data);
-    document.getElementById("code").innerHTML = hljs.highlightAuto(codeString).value;
+    .then(data => codeString = data)
+    .then(() => document.getElementById("code").innerHTML = codeString) 
+    // hljs.highlightAuto(codeString).value;
    // hljs.initHighlightingOnLoad();
     //hljs.highlightBlock(document.getElementById("code"));
 </script>
