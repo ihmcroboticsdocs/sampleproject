@@ -1,4 +1,4 @@
-require('isomorphic-fetch');
+var fetch = require('isomorphic-fetch');
 var hljs = require('highlight.js');
 
 hljs.initHighlightingOnLoad();
