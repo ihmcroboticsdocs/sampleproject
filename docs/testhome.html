@@ -28,20 +28,20 @@ var valkyrieClass = fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/mas
             .then(function(response) {return response.text()});
 var robotClass = fetch("https://rawgit.com/ihmcroboticsdocs/simulation-construction-set/master/src/main/java/us/ihmc/simulationconstructionset/Robot.java")
             .then(function(response) {return response.text()});
-<p>var allData = {&quot;valkyrieClass&quot;:{}, &quot;robotClass&quot;:{}};
+var allData = {"valkyrieClass":{}, "robotClass":{}};
 Promise.all([valkyrieClass,robotClass]).then(function(values) {
-allData[&quot;valkyrieClass&quot;] = values[0];
-allData[&quot;robotClass&quot;] = values[1];
+    allData["valkyrieClass"] = values[0];
+    allData["robotClass"] = values[1];
 })
-.then(() =&gt; {
-//Getting code from full .java file
-document.getElementById(&quot;ValkyrieDemo&quot;).innerHTML = hljs.highlight('java', allData.valkyrieClass).value;
-//Getting snippets of code
-start = allData.robotClass.indexOf(&quot;public Robot&quot;);
-end = allData.robotClass.indexOf(&quot;\n\n&quot;, start);
-snippet = allData.robotClass.substring(start, end);
-document.getElementById(&quot;RobotConstructor&quot;).innerHTML = hljs.highlight('java', snippet).value;
-});</p>
+.then(() => {
+    //Getting code from full .java file
+    document.getElementById("ValkyrieDemo").innerHTML = hljs.highlight('java', allData.valkyrieClass).value;
+    //Getting snippets of code
+    start = allData.robotClass.indexOf("public Robot");
+    end = allData.robotClass.indexOf("\n\n", start);
+    snippet = allData.robotClass.substring(start, end);
+    document.getElementById("RobotConstructor").innerHTML = hljs.highlight('java', snippet).value;
+}); 
 </script>
 <p>Note for future: The raw git links that are retrieved currently are the ones in development mode(new changes to GitHub reflected within minutes, but excessive traffic will be throttled and blacklisted. Alternative is production mode that has no traffic limit BUT has a permanent file link based on commit hash.</p>
 <pre><code id="ValkyrieDemo"></code></pre>
