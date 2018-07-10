@@ -23,9 +23,27 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Test Home</h1></header><article><div><span><script>hljs.initHighlightingOnLoad();</script>
 <script>
+//Getting the code from complete .java file
 fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
     .then(response =>response.text())
     .then(data => document.getElementById("ValkyrieDemo").innerHTML = hljs.highlight('java', data).value) 
 </script>
+<script>
+//Getting chunks of a .java file
+var file, start, snippet, end;
+fetch("https://rawgit.com/ihmcroboticsdocs/simulation-construction-set/master/src/main/java/us/ihmc/simulationconstructionset/Robot.java")
+    .then(response =>response.text())
+    .then(data => file = data)
+    .then(() => {
+        start = file.indexOf("public Robot");
+        end = file.indexOf("\n\n", start);
+        snippet = file.substring(start, end);
+        document.getElementById("RobotConstructor1").innerHTML = hljs.highlight('java', snippet).value);
+    })   
+</script>
+<p>Note for future: The raw git links that are retrieved currently are the ones in development mode(new changes to GitHub reflected within minutes, but excessive traffic will be throttled and blacklisted. Alternative is production mode that has no traffic limit BUT has a permanent file link based on commit hash.</p>
 <pre><code id="ValkyrieDemo"></code></pre>
+<p>This is the beginning of code snippets:</p>
+<pre><code id="RobotVariables"></code></pre>
+<pre><code id="RobotConstructor1"></code></pre>
 </span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/sampleproject/" class="nav-home"><img src="/sampleproject/img/running-man-logo.png" alt="Test Site" width="66" height="58"/></a><div><h5>Docs</h5><a href="https://ihmcroboticsdocs.github.io/ihmc-open-robotics-software/docs/quickstarthome.html">Quick Start</a><a href="https://ihmcroboticsdocs.github.io/docs/docshome.html">Software Documentation</a></div><div><h5>Community</h5><a href="https://github.com/ihmcrobotics">GitHub</a><a href="https://www.facebook.com/TheIHMC" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/ihmcrobotics" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://www.youtube.com/user/DRCihmcRobotics" target="_blank" rel="noreferrer noopener">YouTube</a></div></section><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>
