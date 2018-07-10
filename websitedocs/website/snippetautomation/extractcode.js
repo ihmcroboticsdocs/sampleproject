@@ -28,14 +28,33 @@ function codeToHTML(codeString)
 
 
 //Gets the .java file as a URL from github repo (updated code)
-
-fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
+var file, start, snippet, end;
+fetch("https://rawgit.com/ihmcroboticsdocs/simulation-construction-set/master/src/main/java/us/ihmc/simulationconstructionset/Robot.java")
     .then(response =>response.text())
-    .then(data => completeFile = data)
-    .then(() => console.log(hljs.highlight('java', completeFile)));
+    .then(data => file = data)
+    .then(() => {
+        start = file.indexOf("public Robot");
+        end = file.indexOf("\n\n", start);
+        snippet = file.substring(start, end);
+        //console.log(hljs.highlight('java', snippet).value);
+    })   
+    //.then(() => console.log(hljs.highlight('java', completeFile)));
 
 
-var codeString =  "<pre><code>\n" + completeFile + "\n</code></pre>";
+var valkyrieClass = fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
+            .then(function(response) {return response.text()});
+var robotClass = fetch("https://rawgit.com/ihmcroboticsdocs/simulation-construction-set/master/src/main/java/us/ihmc/simulationconstructionset/Robot.java")
+            .then(function(response) {return response.text()});
+
+var allData = {"valkyrieClass":{}, "robotClass":{}};
+Promise.all([valkyrieClass,robotClass]).then(function(values) {
+    allData["valkyrieClass"] = values[0];
+    allData["robotClass"] = values[1];
+})
+.then(() => {
+    console.log(hljs.highlight('java', allData.robotClass).value);
+});
+
 //console.log(hljs.highlight('java', completeFile));
 //Testing script code to insert straight into tutorials
 /*
