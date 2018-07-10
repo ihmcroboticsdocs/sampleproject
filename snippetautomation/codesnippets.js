@@ -1,7 +1,28 @@
-
-
 hljs.initHighlightingOnLoad();
 
+var allScripts = document.getElementsByTagName('script');
+var script = allScripts[allScripts.length-1];
+console.log("Script name is " + script);
+var sources = script.getAttribute('sources');
+var urls, start, end, snippet;
+
+//If there is only one source, then no need to do promises or fill up urls array
+if(sources.length == 1) 
+{
+    var url = sources[0].url;
+    var snippets = sources[0].snippets;
+    
+    //Working with complete file
+    if(snippets.length == 1 && snippets[0].length == 1)
+    {
+        var id = snippets[0][0];
+        fetch(url).then(response => response.text())
+        .then(data => document.getElementById(id).innerHTML = hljs.highlight('java', data).value)
+    }
+}
+
+
+/*
 var start, snippet, end;
 var valkyrieClass = fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java")
             .then(function(response) {return response.text()});
@@ -20,4 +41,5 @@ Promise.all([valkyrieClass,robotClass]).then(function(values) {
     end = allData.robotClass.indexOf("\n\n", start);
     snippet = allData.robotClass.substring(start, end);
     document.getElementById("RobotConstructor").innerHTML = hljs.highlight('java', snippet).value;
-}); 
+});
+*/ 
