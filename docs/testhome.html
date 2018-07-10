@@ -30,14 +30,13 @@ fetch("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/test
 </script>
 <script>
 //Getting chunks of a .java file
-var file, start, snippet, end;
+var start, snippet, end;
 fetch("https://rawgit.com/ihmcroboticsdocs/simulation-construction-set/master/src/main/java/us/ihmc/simulationconstructionset/Robot.java")
     .then(response =>response.text())
-    .then(data => file = data)
-    .then(() => {
-        start = file.indexOf("public Robot");
-        end = file.indexOf("\n\n", start);
-        snippet = file.substring(start, end);
+    .then(data => {
+        start = data.indexOf("public Robot");
+        end = data.indexOf("\n\n", start);
+        snippet = data.substring(start, end);
         document.getElementById("RobotConstructor").innerHTML = hljs.highlight('java', snippet).value);
     })   
 </script>
