@@ -3,14 +3,14 @@ hljs.initHighlightingOnLoad();
 var allScripts = document.getElementsByTagName('script');
 var script = allScripts[allScripts.length-1];
 var sources = eval(script.getAttribute('sources'));
-var urls,allSnippets;
+var urls, allSnippets;
 
 //Fill up URL and snippet arrays
 var numberOfSources = sources.length;
 for(i = 0; i < numberOfSources; i++) 
 {
-	urls.push(fetch(sources[i].url).then(function(response) {return response.text()}));
-	allSnippets.push(souces[i].snippets); //all the snippet selections per source
+	urls[i] = fetch(sources[i].url).then(function(response) {return response.text()});
+	allSnippets[i] = sources[i].snippets; //all the snippet selections per source
 }
 
 //Operate on the data from each source code file
