@@ -3,7 +3,7 @@ hljs.initHighlightingOnLoad();
 var allScripts = document.getElementsByTagName('script');
 var script = allScripts[allScripts.length-1];
 console.log("Script name is " + script);
-var sources = Array.of(script.getAttribute('sources'));
+var sources = script.getAttribute('sources');
 var urls, start, end, snippet;
 
 //If there is only one source, then no need to do promises or fill up urls array
