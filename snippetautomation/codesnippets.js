@@ -3,7 +3,8 @@ hljs.initHighlightingOnLoad();
 var allScripts = document.getElementsByTagName('script');
 var script = allScripts[allScripts.length-1];
 var sources = eval(script.getAttribute('sources'));
-var urls, allSnippets;
+var urls =[];
+var allSnippets = [];
 
 //Fill up URL and snippet arrays
 var numberOfSources = sources.length;
