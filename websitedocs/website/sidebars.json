@@ -1,5 +1,5 @@
  {
      "test-sidebar": {
-    "Sidebar": ["testhome"]
+    "Sidebar": ["testhome", "testscripts"]
   }
 }
