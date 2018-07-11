@@ -3,6 +3,10 @@ hljs.initHighlightingOnLoad();
 var allScripts = document.getElementsByTagName('script');
 var script = allScripts[allScripts.length-1];
 var sources = eval(script.getAttribute('sources'));
+/*
+var allScripts = document.getElementsByTagName('script');
+var script = allScripts[allScripts.length-1];
+var sources = eval(script.getAttribute('sources'));
 var urls =[];
 var allSnippets = [];
 
@@ -44,3 +48,9 @@ Promise.all(urls).then(function(values) {
 			}
 		}
 });
+*/
+/*
+ * Old html stuff that worked:
+ * <script src="../snippetautomation/codesnippets.js" sources=Array.of({url:valURL,snippets:[[valId]]},{url:robotURL,snippets:[[robotConstructorId,robotConstructorStart,robotConstructorEnd],[robotVariablesId,robotVariablesStart,robotVariablesEnd]]})></script>
+ * 
+ */
