@@ -7,7 +7,7 @@ var sources = eval(script.getAttribute('sources'));
 var numberOfSources = sources.length;
 
 //Getting the attributes from all the code blocks
-var allCodeBlocks = document.getElementsByTagName('code');
+var allCodeBlocks = Array.from(document.getElementsByTagName('code'));
 var urls = []; //array of data from each source
 
 //Get and operate on data from source files
