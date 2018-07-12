@@ -19,7 +19,7 @@ Promise.all(urls).then(function(values) {
 	for(i = 0; i < numberOfSources; i++)
 		{
 		var dataFromSource = values[i];
-		var matchIndex = allCodeBlocks.find(function(element) {
+		var matchIndex = allCodeBlocks.findIndex(function(element) {
 			return element.getAttribute('data-url-index') == i.toString();
 			});	
 		
