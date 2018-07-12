@@ -40,7 +40,7 @@ Promise.all(urls).then(function(values) {
 				}
 			allCodeBlocks.splice(matchIndex, 1);  //removes the element after operating on it
 			
-			matchIndex = allCodeBlocks.find(function(element) {
+			matchIndex = allCodeBlocks.findIndex(function(element) {
 				return element.getAttribute('data-url-index') == i.toString();
 				});	
 			}
