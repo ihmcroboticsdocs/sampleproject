@@ -3,10 +3,11 @@ id: testscripts
 title: Testing scripts
 ---
 
-<pre><code data-url-index="0" data-snippet="complete" id="ValkyrieDemo"></code></pre>
+<pre><code data-url-index="0" data-snippet="complete" id="Simulation"></code></pre>
 
-<pre><code data-url-index="1" data-snippet="portion" data-start="public Robot(Robot" data-end="&#10&#10" id="RobotVariables"></code></pre>
+<pre><code data-url-index="1" data-snippet="portion" data-start="public FlyballGovernorRobot" data-end="this.initControl();
+   }" id="RobotConstructor"></code></pre>
 
-<pre><code data-url-index="1" data-snippet="portion" data-start="protected" data-end="gravityZ" id="RobotConstructor"></code></pre>
+<pre><code data-url-index="0" data-snippet="multipleportions" data-portions='[["public MobileRobot()","\n\n"],["// create first gimbal joint","}\n\n"]]' id="MobileRobotConstructor"></code></pre>
 
-<script src="../snippetautomation/codesnippets.js" sources=Array.of("https://rawgit.com/ihmcroboticsdocs/sampleproject/master/src/us/ihmc/testeuclid/ValkyrieDemo.java","https://rawgit.com/ihmcroboticsdocs/simulation-construction-set/master/src/main/java/us/ihmc/simulationconstructionset/Robot.java")></script>
+<script id="snippetscript" src=https://cdn.rawgit.com/ihmcrobotics/ihmcrobotics.github.io/source/websitedocs/website/static/snippetautomation/codesnippets.js sources=Array.of(""https://cdn.rawgit.com/ihmcrobotics/ihmc-open-robotics-software/7e9f65db/example-simulations/src/main/java/us/ihmc/exampleSimulations/flyballGovernor/FlyballGovernorSimulation.java","https://cdn.rawgit.com/ihmcrobotics/ihmc-open-robotics-software/7e9f65db/example-simulations/src/main/java/us/ihmc/exampleSimulations/flyballGovernor/FlyballGovernorRobot.java","https://cdn.rawgit.com/ihmcrobotics/ihmc-open-robotics-software/7e9f65db/example-simulations/src/main/java/us/ihmc/exampleSimulations/mobile/MobileRobot.java")></script>
